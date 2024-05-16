@@ -156,6 +156,10 @@ end
 -- Version: 3.2
 game:GetService("RunService"):Set3dRenderingEnabled(false)
 -- Instances:
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
 
 local PSiwshuwDUItgsuiz = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -169,7 +173,6 @@ local TextLabel_3 = Instance.new("TextLabel")
 local TextLabel_4 = Instance.new("TextLabel")
 
 --Properties:
-
 PSiwshuwDUItgsuiz.Name = RandomVariable(20)
 PSiwshuwDUItgsuiz.Parent = game.CoreGui
 PSiwshuwDUItgsuiz.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -252,14 +255,17 @@ TextLabel_4.Parent = Frame
 TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_4.BackgroundTransparency = 1.000
 TextLabel_4.BorderSizePixel = 0
-TextLabel_4.Position = UDim2.new(0.378457874, 0, 0.369802684, 0)
+TextLabel_4.Position = UDim2.new(0.350120336, 0, 0.380047441, 0)
 TextLabel_4.Size = UDim2.new(0, 907, 0, 54)
 TextLabel_4.Font = Enum.Font.Code
-TextLabel_4.Text = "Money: HOLDER"
+TextLabel_4.Text = "Controller Name:"
 TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_4.TextSize = 49.000
 TextLabel_4.TextWrapped = true
 TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+
+
 
 
 -- Scripts:
@@ -333,11 +339,7 @@ local function WDTSQEC_fake_script() -- TextLabel_4.LocalScript
 	local script = Instance.new('LocalScript', TextLabel_4)
 
 	local text = script.Parent
-
-	while wait() do
-		text.Text = "Money: " ..
-			game:GetService("Players").LocalPlayer.PlayerGui.MainScreenGui.MoneyText.Text
-	end
+	text.Text = game.Players:GetPlayerByUserId(getgenv().Controller).Name
 end
 coroutine.wrap(WDTSQEC_fake_script)()
 
